@@ -104,20 +104,22 @@ melody = \relative ges, {
   \bar "||"
   
   r16[ aes r aes] r[ \deadNote aes a8] bes4.\prall des8
-  ees8[ r16 ees'] r8 des16 bes ees[ ees r ees,] r[ \deadNote g, r aes]
-  r8.[ aes'16] r[ e,( a8)] bes4 r16 d des c16
+  ees8[ r16 ees'-^] r8 des16 bes ees[ ees r ees,] r[ \deadNote g, r aes]
+  r8.[ aes'16] r[ e,( a8)] bes4\prall r16 d des c16
   r16[ g'8 c16] r8[ g16 c,] f8. \deadNote c16 ges8 g16 aes
-  r8.aes'16 r[ e,( a8)] bes4.\prall des8
+  r8.aes'16-^ r[ e,( a8)] bes4.\prall des8
   ees16[ r8 ees'16-^] r4 r16[ ees-^ ees,8] r16[ a-^ a,8]
-  \deadNote aes16 aes'-^ aes,8 r a bes8. bes16 r[ d des16 c]
+  \deadNote aes16 aes'-^ aes,8 r a bes8.\prall bes16 r[ d des16 c]
   r16[ g' r c] r[ g r ges](f)[ c r ges] r[ g r aes]
-  r16[ aes r aes'] r a, r8 bes8. bes16 r[ des r ees]
-  r16[ ees r ees] r8[ ees'8] r16[ ees, r ees] r[ \deadNote g, bes aes]
   
   \mp
   \bar "||"
+  r16[ aes r aes'] r a, r8 bes8. bes16 r[ des r ees]
+  r16[ ees r ees] r8[ ees'8] r16[ ees, r ees] r[ \deadNote g, bes aes]
   
-  r16[ aes' r aes,] r[ aes a8] bes8. bes16 r[ d des c]
+
+  
+  r16[ aes' r aes,] r[ aes a8] bes8.\prall bes16 r[ d des c]
   r16[ g' r c] r8 g16 ges f[ g, ges f] r[ ges r aes] 
   r16[ aes' \deadNote aes, a] r8 bes r16[ bes r bes] r d r8
   r16[ ees r ees] r8 des ees16 des bes ges r[ g r aes]
