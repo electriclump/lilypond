@@ -1,12 +1,13 @@
 \version "2.19.83"
 
 \header {
-  title = "thinking"
-  composer = "louis cole"
+  title = "THINKING"
+  composer = "Louis Cole/Sam Wilkes"
 
 }
 
 \paper {
+  page-breaking = #ly:page-turn-breaking
   #(define fonts
     (set-global-fonts
      #:music "lilyjazz"
@@ -21,6 +22,7 @@ global = {
   \tempo 4=100
   \clef bass
   \compressFullBarRests
+  
 }
 
 melody = \relative ges, {
@@ -31,7 +33,6 @@ melody = \relative ges, {
   \bar "||"
   R1*8 \bar "||"
   R1*7
-  \break
   
   %bass
   r2. r8. aes16
@@ -49,7 +50,10 @@ melody = \relative ges, {
   r16[ des' d ees] r[ bes ees,8] \glissando \cadenzaOn \hideNotes bes'32 \unHideNotes \cadenzaOff r16[ f'-^ f, ges'] r[ g-^ r aes-^ ]
   r16[ ees aes, a] r[ \deadNote ees a,8] bes8. bes16 r[ d des c]
   r16[ g' r c] r8 g16 c, f8. c16 ges8 g16 aes
+  
   \bar "||"
+  \break
+  
   r16[ aes r aes] r[ \deadNote aes a8] bes8. bes16 r[ des r ees]
   r16[ ees r ees] r8[ des16 \deadNote bes] ees8. \deadNote des16 ges,8 g16 aes
   r16[ \deadNote aes' aes, \deadNote aes'] r[ \deadNote aes, a8] bes8. bes16 r[ d des c]
@@ -64,7 +68,7 @@ melody = \relative ges, {
   \mark "double tempo"
   R1*8
   \break
-  \repeat volta 2 {   des'4 f ges des c e f c ces ees fes ces  }
+  \repeat volta 2 {   des'4 f ges des c e f c ces? ees? fes ces  }
   \alternative {
     { bes f bes c  | }
     {  
@@ -74,7 +78,6 @@ melody = \relative ges, {
   }
 
   bes,4 
-  \break
   r2. r r8. aes16
   \f
   \bar "||"
@@ -94,6 +97,7 @@ melody = \relative ges, {
   % chorus
   r16[ aes r aes] r[ aes a r] bes8. bes16 r[ des r ees] 
   r16[ ees r ees] r8 des16 bes ees ees des ees des bes ges aes
+  \break
   r16[ aes r aes] r[ aes' a,8] bes8. bes16 r[ d des c] 
   r16[ \deadNote g' d' g] ees c g f r16[ \deadNote c' g' c,] aes' f c aes,
   r16[ aes r aes] r[ aes a r] bes8. bes16 r[ des r ees] 
@@ -102,6 +106,7 @@ melody = \relative ges, {
   r16[ \deadNote g' d' g,] ees' c g f r16[ \deadNote c' g' c,] aes' f c aes,
   
   \bar "||"
+  \break
   
   r16[ aes r aes] r[ \deadNote aes a8] bes4.\prall des8
   ees8[ r16 ees'-^] r8 des16 bes ees[ ees r ees,] r[ \deadNote g, r aes]
@@ -127,9 +132,9 @@ melody = \relative ges, {
   r16[ g' r c] r[ \deadNote g g16 c,] f8. bes,16 r8 bes
   bes\< bes bes bes bes bes bes bes 
   bes bes bes bes bes r8 r8. aes16\ff
-
- 
- \bar "||"
+  
+  \bar "||"
+  
   % chorus
   r16[ aes r aes] r[ \deadNote aes' a,8] bes8. bes16 r[ des r ees]
   r16[ ees r ees] r8[ des16 bes] ees8. \deadNote des16 ges,8 g16 aes
@@ -142,7 +147,7 @@ melody = \relative ges, {
   \fff 
   
   \bar "||"
-
+  
   r8 ces'? r16[ aes, a8] bes16[ des'?8.] r16 bes, des8
   ees8.\prall ees16 r8[ des16 \deadNote bes] ees des \deadNote bes ges r[ g r aes](
   aes16)(
@@ -152,7 +157,7 @@ melody = \relative ges, {
      des'?-^ r8 r16[ d, des c ]
   r16[ c' r g] r8[ ges] f8[ r16 ges,16] r[ g r aes]
   r16[ aes' aes, aes] r[ e(a8)] bes8. bes16 r[ des r ees]
-  r8.[ des'16] r[ d r8] ees16 des bes aes r[ des r aes]
+  r8.[ des'16] r[ des r8] ees16 des bes aes r[ des r aes]
   r16[ ees r aes,] r[ a r bes] r[ ees r d] r[ des r c] 
   r16[ g' r g] r[ ges r d] r[f, r ges] r[ g r aes]
   r16[ aes r aes] r[aes' a,8] bes8. bes16 r[ des r ees] 
@@ -185,9 +190,17 @@ words = \lyricmode {
 
 \score {
   <<
-    \new Staff { \melody }
+    \new Staff  { \melody }
     \addlyrics { \words }
   >>
-  \layout { }
+  \layout {
+    
+     \context {
+       \Staff
+         \override VerticalAxisGroup.default-staff-staff-spacing =  #'((basic-distance . 16)
+         (minimum-distance . 15)
+         (padding . 20))
+     }
+  }
   \midi { }
 }
