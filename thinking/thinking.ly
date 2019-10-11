@@ -52,7 +52,6 @@ melody = \relative ges, {
   r16[ g' r c] r8 g16 c, f8. c16 ges8 g16 aes
   
   \bar "||"
-  \break
   
   r16[ aes r aes] r[ \deadNote aes a8] bes8. bes16 r[ des r ees]
   r16[ ees r ees] r8[ des16 \deadNote bes] ees8. \deadNote des16 ges,8 g16 aes
@@ -70,7 +69,7 @@ melody = \relative ges, {
   \break
   \repeat volta 2 {   des'4 f ges des c e f c ces? ees? fes ces  }
   \alternative {
-    { bes f bes c  | }
+    { bes f bes c  | \break }
     {  
       \mark "reg tempo"
       bes2 \glissando bes'2 \glissando |
