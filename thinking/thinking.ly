@@ -131,7 +131,7 @@ melody = \relative ges, {
   r16[ \deadNote ges aes aes] r[ \deadNote  g a8] bes8.\prall bes16 r[ d des c]
   r16[ g' r c] r[ \deadNote g g16 c,] f8. bes,16 r8 bes
   bes\< bes bes bes bes bes bes bes 
-  bes bes bes bes bes r8 r8. aes16\ff
+  bes bes bes bes bes\ff r8 r8. aes16
   
   \bar "||"
   
