@@ -19,7 +19,7 @@
 global = {
   \time 4/4
   \key ges \major
-  \tempo 4=100
+  \tempo 4=112
   \clef bass
   \compressFullBarRests
   
