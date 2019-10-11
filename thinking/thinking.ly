@@ -61,12 +61,12 @@ melody = \relative ges, {
   r8.[ ees'16-^] r4 r16[ ees16-^ ees,8] r16[ a,8 aes16]
   r16[ aes r aes] r[ \deadNote aes-. a-. r] bes8. bes16 r[ d des c] 
   r16[ g' r c] r8 g16 c, f4 f,4
+  \break
  
   % breakdown
   \bar "||"
   \mark "double tempo"
   R1*8
-  \break
   \repeat volta 2 {   des'4 f ges des c e f c ces? ees? fes ces  }
   \alternative {
     { bes f bes c  | \break }
